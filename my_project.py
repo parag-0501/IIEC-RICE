@@ -32,23 +32,23 @@ while True:
 	
 	elif not(any(ele in p for ele in dont)) and (("chrome" in p) or ("google" in p) or ("internet" in p)):
 		pyttsx3.speak(random.choice(start_statement))	  
-		os.system("chrome &")
+		os.system("start chrome")
 	
 	elif not(any(ele in p for ele in dont)) and (("mozilla" in p) or ("firefox" in p)) :
 		pyttsx3.speak(random.choice(start_statement))
-		os.system("firefox &")
+		os.system("start firefox")
 	
 	elif not(any(ele in p for ele in dont)) and (("microsoft" in p) and ("edge" in p)) :
 		pyttsx3.speak(random.choice(start_statement))
-		os.system("msedge &")
+		os.system("start msedge")
 	
 	elif not(any(ele in p for ele in dont)) and (("notepad" in p) or ("editor" in p)) :
 		pyttsx3.speak(random.choice(start_statement))
-		os.system("notepad &")
+		os.system("start notepad")
 	
 	elif not(any(ele in p for ele in dont)) and (("player" in p) and ("media" in p)):
 		pyttsx3.speak(random.choice(start_statement))
-		os.system("wmplayer &")
+		os.system("start wmplayer")
 	
 	elif not(any(ele in p for ele in dont)) and (("calculator" in p) or ("calc" in p)):
 		pyttsx3.speak(random.choice(start_statement))
