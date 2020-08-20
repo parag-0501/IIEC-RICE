@@ -5,9 +5,9 @@ import time
 import webbrowser
 
 start = ["run","execute","start","open","running","opening","starting","executing"]
-exit = ["exit" , "quit" , "terminate" , "stop" , "close" , "end"]
+exit = ["exit" , "quit" , "terminate" , "stop" , "close" , "end","bye"]
 dont = ["do not","don't","dont","nothing"]
-complement = ["good","great","grt","sweet","humble","cute","outstanding","amazing","awesome"]
+complement = ["good","gud","great","grt","sweet","humble","cute","outstanding","amazing","awesome"]
 web = ["music","song","comedy","dance","stand up","stand-up","sketch","search","brows","find"]
 annoy = ["annoy","anger","bother","idiot","irritat","angry","bad","worst","appolog","arogent"]
 start_statement = ["here we go", "sure, why not", "enjoy your thing", "yaa sure" , "okay then"]
@@ -54,6 +54,46 @@ while True:
 		pyttsx3.speak(random.choice(start_statement))
 		os.system("calc &")
 	
+	elif not(any(ele in p for ele in dont)) and (("this pc" in p) or ("my computer" in p) or ("computer" in p) or ("pc" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start shell:mycomputerfolder")
+	
+	elif not(any(ele in p for ele in dont)) and (("calendar" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start outlookcal:")
+	
+	elif not(any(ele in p for ele in dont)) and (("message" in p) or ("chat" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start ms-chat:")
+	
+	elif not(any(ele in p for ele in dont)) and (("help" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start ms-contact-support:")
+	
+	elif not(any(ele in p for ele in dont)) and (("clock" in p) or ("alarm" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start ms-clock:")
+	
+	elif not(any(ele in p for ele in dont)) and (("camera" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start microsoft.windows.camera:")
+	
+	elif not(any(ele in p for ele in dont)) and (("picture" in p) or ("photo" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start ms-photos:")
+	
+	elif not(any(ele in p for ele in dont)) and (("3d" in p) or ("paint" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start ms-paint:")
+	
+	elif not(any(ele in p for ele in dont)) and (("paint" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("mspaint")
+	
+	elif not(any(ele in p for ele in dont)) and (("mail" in p)):
+		pyttsx3.speak(random.choice(start_statement))
+		os.system("start outlookmail:")
+	
 	elif ("time" in p) or ("date" in p):
 		print(time.asctime(time.localtime()))
 		pyttsx3.speak(time.asctime(time.localtime()))
@@ -69,10 +109,6 @@ while True:
 	elif not(any(ele in p for ele in dont)) and (("disk" in p)):
 		pyttsx3.speak(random.choice(start_statement))
 		os.system("start diskmgmt.msc")
-	
-	elif not(any(ele in p for ele in dont)) and (("paint" in p)):
-		pyttsx3.speak(random.choice(start_statement))
-		os.system("mspaint")
 		
 	elif (p==""):
 		pyttsx3.speak("sorry , but I Haven't received any input from you!!!")
@@ -96,16 +132,3 @@ while True:
 	else:
 		webbrowser.open('http://www.google.com/search?btnG=1&q=%s'%p)
 		pyttsx3.speak("here's what i found for you")
-
-
-
-
-
-
-
-
-
-
-
-
-
